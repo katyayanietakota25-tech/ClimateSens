@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ClimateSense — Climate Change Sentiment Analysis Demo
 
 This starter project provides a simple HTML/CSS/JavaScript front-end connected to a Python Flask API and a TF-IDF + Logistic Regression classifier.
@@ -42,3 +43,6 @@ Prepare a CSV with two columns named `text` and `sentiment`; labels must be `Pos
 
 ## Limitations
 The included dataset is tiny and illustrative. Model confidence is a classifier probability, not a guarantee that the prediction is correct. Predictions can be wrong, especially for sarcasm, mixed opinions, abbreviations, or text outside the demo examples.
+=======
+# ClimateSens
+>>>>>>> 0e82ad9651eb9ae834d60a1cd27f630db0e60591
