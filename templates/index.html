@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClimateSense | Sentiment Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand"><span class="leaf">✦</span> ClimateSense</div>
+    <a href="#about">About</a>
+  </nav>
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow"><span class="live-dot"></span> CLIMATE CHANGE · NLP · MACHINE LEARNING</div>
+      <h1>Understand the <span>voice of the planet.</span></h1>
+      <div class="hero-tags"><span>🌱 Climate awareness</span><span>✦ Sentiment insights</span><span>◈ AI-powered analysis</span></div>
+      <p class="intro">Enter a climate-related tweet or sentence and classify its sentiment as positive, negative, or neutral.</p>
+      <div class="panel">
+        <label for="textInput">Your climate-related text</label>
+        <textarea id="textInput" maxlength="1500" placeholder="Example: Renewable energy can help create a cleaner future."></textarea>
+        <div class="controls">
+          <span id="charCount">0 / 1500 characters</span>
+          <button id="predictBtn" type="button">Analyze sentiment <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="examples">
+          <span>Try an example:</span>
+          <button class="example" data-text="Climate change is destroying ecosystems and wildlife.">Negative</button>
+          <button class="example" data-text="Renewable energy can help create a cleaner future.">Positive</button>
+          <button class="example" data-text="The report describes changes in global temperature.">Neutral</button>
+        </div>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+        <section id="result" class="result hidden" aria-live="polite">
+          <div class="result-top"><span class="result-label">PREDICTED SENTIMENT</span><span id="sentimentPill" class="pill">Neutral</span></div>
+          <div class="confidence-row"><span>Model confidence (estimated)</span><strong id="confidence">—</strong></div>
+          <div class="meter"><div id="meterFill"></div></div>
+          <p id="modelNote" class="note"></p>
+        </section>
+      </div>
+      <p class="disclaimer">Student prototype: the included model is trained on a small illustrative demo dataset. It is not the original research model and is not suitable for scientific conclusions.</p>
+    </section>
+    <section class="feature-strip" aria-label="Project highlights">
+      <article><span class="feature-icon">01</span><div><strong>Enter any text</strong><small>Paste a climate-related post</small></div></article>
+      <article><span class="feature-icon">02</span><div><strong>Analyze sentiment</strong><small>Get a predicted category</small></div></article>
+      <article><span class="feature-icon">03</span><div><strong>Review the result</strong><small>See the model's estimate</small></div></article>
+    </section>
+    <section id="about" class="about">
+      <div><div class="eyebrow">HOW IT WORKS</div><h2>From text to insight</h2></div>
+      <div class="steps">
+        <article><span>01</span><h3>Enter text</h3><p>Provide a climate-related sentence or social-media post.</p></article>
+        <article><span>02</span><h3>Transform</h3><p>TF-IDF converts text into numerical features for the classifier.</p></article>
+        <article><span>03</span><h3>Predict</h3><p>A trained Logistic Regression model returns a sentiment class.</p></article>
+      </div>
+      <p class="research-note"><strong>Research paper:</strong> “Sentiment Analysis for Climate Change Using Machine Learning and Deep Learning Approaches.” The paper reports multiple ML/DL models, with BiLSTM at 96% accuracy and stacking at 95%. Those are the paper's reported results, not results of this demo model.</p>
+    </section>
+    <footer>ClimateSense · Academic project prototype</footer>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
